@@ -39,7 +39,9 @@ class RouteServiceProvider extends ServiceProvider
 
         $this->mapWebRoutes();
 
-        //
+        Route::get('/', function () {
+		    return view('index');
+	    });
     }
 
     /**
