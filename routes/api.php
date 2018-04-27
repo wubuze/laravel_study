@@ -23,3 +23,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::post('access/reg', 'Access@reg');
 Route::post('access/login', 'Access@login');
+Route::get('access/getUser', 'Access@getUser');
