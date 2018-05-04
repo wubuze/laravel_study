@@ -14,8 +14,8 @@ return [
     */
 
     'defaults' => [
-//        'guard' => 'web',
-        'guard' => 'api',  //jwt
+        'guard' => 'web',
+//        'guard' => 'api',  //jwt
         'passwords' => 'users',
     ],
 
@@ -44,7 +44,7 @@ return [
 
         'api' => [
             'driver' => 'jwt', //jwt
-            'provider' => 'test',
+            'provider' => 'jwt',
         ],
     ],
 
@@ -70,7 +70,7 @@ return [
             'driver' => 'eloquent',
             'model' => App\User::class,
         ],
-        'test' => [
+        'jwt' => [
             'driver' => 'eloquent',
             'model' => App\User::class,
         ],
