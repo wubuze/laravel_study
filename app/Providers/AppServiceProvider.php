@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Repo\Test;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -23,6 +24,14 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        $this->regTest();
+    }
+
+    public function regTest()
+    {
+        $this->app->singleton('fatest', function () {
+            return new Test();
+        });
+
     }
 }

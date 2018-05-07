@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Api;
 
+use Test;
 use App\Model\Client;
 use Tymon\JWTAuth\Facades\JWTAuth;
 use App\Http\Controllers\Controller;
@@ -13,7 +14,7 @@ class Access extends Controller
     public function __construct()
     {
 //        config(['auth.defaults.guard'=> 'api' ]);//已经在TouteServiceProvider配置
-        $this->middleware('authJwt')->except(['reg', 'login']);
+//        $this->middleware('authJwt')->except(['reg', 'login']);
 
     }
 
@@ -35,6 +36,8 @@ class Access extends Controller
     public function login(Request $req)
     {
 
+        return Test::get();//使用 facades
+//        return 1;
         $token = JWTAuth::attempt(['account'=> $req->account,'password'=>$req->pwd]);
 
         return response(json_encode(['token'=>$token]),200);
