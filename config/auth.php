@@ -72,7 +72,7 @@ return [
         ],
         'jwt' => [
             'driver' => 'eloquent',
-            'model' => App\User::class,
+            'model' => App\Model\Client::class,
         ],
 
         // 'users' => [

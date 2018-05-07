@@ -2,7 +2,7 @@
 
 namespace App\Providers;
 
-use Illuminate\Support\Facades\Route;
+use Route;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 
 class RouteServiceProvider extends ServiceProvider
@@ -39,9 +39,9 @@ class RouteServiceProvider extends ServiceProvider
 
         $this->mapWebRoutes();
 
-        Route::get('/', function () {
-		    return view('index');
-	    });
+//        Route::get('/', function () {
+//		    return view('index');
+//	    });
     }
 
     /**
@@ -67,6 +67,7 @@ class RouteServiceProvider extends ServiceProvider
      */
     protected function mapApiRoutes()
     {
+        config(['auth.defaults.guard'=> 'api' ]);
         Route::prefix('api')
              ->middleware('api')
              ->namespace($this->namespace.'\Api')
