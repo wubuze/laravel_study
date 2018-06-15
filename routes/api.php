@@ -24,3 +24,12 @@ use Illuminate\Http\Request;
 Route::post('access/reg', 'Access@reg');
 Route::post('access/login', 'Access@login');
 Route::get('access/getUser', 'Access@getUser');
+
+
+Route::group([
+    'prefix' => 'test',
+],
+    function(){
+        Route::get('index', 'Test@index');
+    }
+);
